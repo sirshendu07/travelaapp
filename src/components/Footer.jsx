@@ -46,10 +46,10 @@ const Footer = () => {
             </a>
 
             {/* Social Media placeholders - Ready for your links! */}
-            <a href="your_insta_link_here" target="_blank" rel="noreferrer" className="social-btn">
+            <a href="https://www.instagram.com/santra_anannya_369/?hl=en" target="_blank" rel="noreferrer" className="social-btn">
               Instagram
             </a>
-            <a href="your_facebook_link_here" target="_blank" rel="noreferrer" className="social-btn">
+            <a href="https://www.facebook.com/profile.php?id=61583051534812" target="_blank" rel="noreferrer" className="social-btn">
               Facebook
             </a>
           </div>

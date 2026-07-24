@@ -1,11 +1,14 @@
 /* --- OVERALL NAVBAR POSITIONING --- */
 .navbar-wrapper {
   width: 100%;
-  position: absolute;
+  position: fixed; /* Keeps it visible when scrolling */
   top: 0;
   left: 0;
-  padding: 25px 40px;
-  z-index: 100; 
+  padding: 15px 20px;
+  z-index: 1000; /* Ensures it stays above all cards */
+  background: rgba(15, 15, 15, 0.9); /* Dark background for readability */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar {
@@ -72,17 +75,29 @@
 .search-bar {
   padding: 10px 20px;
   border-radius: 30px;
-  border: none;
+  border: 2px solid transparent;
   outline: none;
   width: 220px;
-  background-color: rgba(255, 255, 255, 0.9);
-  transition: width 0.4s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: white;
+  
+  /* Beautiful dark input with a neon gradient border */
+  background-image: linear-gradient(rgba(20, 20, 20, 1), rgba(20, 20, 20, 1)), 
+                    linear-gradient(90deg, #00ffff, #ff00ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.search-bar::placeholder {
+  color: #bbb; /* Makes the placeholder text visible on dark background */
 }
 
 .search-bar:focus {
-  width: 320px; /* Expands slightly on click */
+  width: 320px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
 }
+
 
 /* --- THE HOVER COLLAPSIBLE MENU --- */
 .dropdown-container {
@@ -163,4 +178,45 @@
 
 @keyframes borderRotate {
   100% { background-position: -200% 0; }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Phones & Tablets)
+   ========================================= */
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    padding: 15px 10px;
+  }
+
+  .navbar {
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo-oval {
+    margin: 0; 
+  }
+
+  .nav-right {
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 60%; 
+  }
+
+  .search-bar:focus {
+    width: 65%; 
+  }
+
+  .menu-title {
+    padding: 10px 15px; 
+    font-size: 0.95rem;
+  }
 }
