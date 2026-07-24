@@ -1,0 +1,173 @@
+/* --- MAIN FOOTER CONTAINER --- */
+.footer-container {
+  background-color: rgba(15, 15, 15, 0.95);
+  color: white;
+  width: 100%;
+  padding: 60px 40px 20px 40px;
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Rainbow Top Border */
+.footer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
+  background-size: 200% auto;
+  animation: rainbowFlow 3s linear infinite;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- ANIMATED COLORFUL HEADINGS --- */
+.footer-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  /* Glowing gradient text */
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbowFlow 3.5s linear infinite;
+}
+
+/* --- ENQUIRY FORM --- */
+.footer-form-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.enquiry-form input, 
+.enquiry-form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Adds a neon pink glow and a tiny nudge when typing */
+.enquiry-form input:focus, 
+.enquiry-form textarea:focus {
+  border: 1px solid #ff00ff;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.3);
+  transform: translateX(5px); 
+}
+
+/* Animated Gradient Submit Button */
+.btn-submit {
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 200% auto;
+  color: #000;
+  font-weight: 900;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: buttonFlow 3s linear infinite;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(255, 0, 255, 0.5);
+  color: white;
+}
+
+/* --- SOCIAL LINKS --- */
+.footer-info-section {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info-section p {
+  margin-bottom: 25px;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Gradient Borders for Social Buttons */
+.social-btn {
+  text-decoration: none;
+  color: white;
+  padding: 12px 25px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  /* This creates a gradient border around a dark button */
+  background-image: linear-gradient(rgba(15, 15, 15, 1), rgba(15, 15, 15, 1)), 
+                    linear-gradient(90deg, #00ffff, #ff00ff, #ffff00);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.4s ease;
+  font-weight: bold;
+}
+
+/* Lifts and fills with color on hover */
+.social-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+  background-image: linear-gradient(rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.2)), 
+                    linear-gradient(90deg, #00ffff, #ff00ff, #ffff00);
+  text-shadow: 0 0 5px white;
+}
+
+/* --- COPYRIGHT BOTTOM --- */
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes rainbowFlow {
+  0% { background-position: 0% central; }
+  100% { background-position: 200% central; }
+}
+
+@keyframes buttonFlow {
+  100% { background-position: -200% 0; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}

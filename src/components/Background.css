@@ -1,0 +1,15 @@
+.background-wrapper {
+  /* Go up one folder to src, then into assets */
+  background-image: url('../assets/ladakh.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  /* Optional: Adds a slight dark overlay so your future navbar and text stand out */
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+}

@@ -1,0 +1,155 @@
+/* --- MAIN CARD CONTAINER --- */
+.card-container {
+  width: 320px;
+  position: relative;
+  border-radius: 20px;
+  background-color: rgba(20, 20, 20, 0.85); /* Dark frosted background */
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto; /* Centers it for testing */
+  
+  /* Smooth transition for the hover movement */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* --- ANIMATED CORNER BORDER --- */
+.card-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 3px; /* Thickness of the animated border */
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  /* Standard mask for broader browser compatibility */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  /* mask-composite is still vendor-specific in some browsers */
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderRotate 4s linear infinite;
+  background-size: 200% 100%;
+  pointer-events: none; /* Allows clicking through the border to the buttons */
+  z-index: 10;
+}
+
+/* --- HOVER EFFECT (Card Moves Up) --- */
+.card-container:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* --- CARD IMAGE --- */
+.card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+}
+
+/* --- CARD CONTENT LAYOUT --- */
+.card-content {
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- ANIMATED DESTINATION TITLE --- */
+.card-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* Rainbow gradient text animation */
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbowFlow 3s linear infinite;
+}
+
+/* --- OVAL DURATION BADGE --- */
+.card-duration {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 50px; /* Makes it an oval */
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 20px;
+}
+
+/* --- PRICE --- */
+.card-price {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.price-subtext {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #aaa;
+}
+
+/* --- ACTION BUTTONS --- */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-book, .btn-details {
+  flex: 1;
+  padding: 12px 0;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  z-index: 20; /* Ensures buttons are clickable over the border */
+  position: relative;
+}
+
+/* Book Now Button (Gradient Fill) */
+.btn-book {
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  color: white;
+}
+
+.btn-book:hover {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* See Details Button (Outline) */
+.btn-details {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #00ffff;
+}
+
+.btn-details:hover {
+  background-color: rgba(0, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* --- KEYFRAMES --- */
+@keyframes borderRotate {
+  100% { background-position: -200% 0; }
+}
+
+@keyframes rainbowFlow {
+  0% { background-position: 0% central; }
+  100% { background-position: 200% central; }
+}

@@ -1,0 +1,37 @@
+/* --- GLOBAL RESET (Replaces index.css) --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Nice default font */
+}
+
+/* --- APP STYLES --- */
+.coming-soon-text {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- CARD GRID LAYOUT --- */
+.cards-wrapper {
+  margin-top: 150px; /* Pushes cards below the navbar */
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next row */
+  justify-content: center;
+  gap: 40px; /* Space between cards */
+  padding: 0 40px 60px 40px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
