@@ -18,7 +18,7 @@ export const destinationsData = [
   },
   {
     id: 3,
-    title: "DUARS",
+    title: "DOOARS",
     duration: "4 Days 3 Nights",
     price: "₹14,000",
     image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600&auto=format&fit=crop" 
@@ -42,7 +42,7 @@ export const destinationsData = [
     title: "OOTY",
     duration: "4 Days 3 Nights",
     price: "₹16,000",
-    image: "https://images.unsplash.com/photo-1605553554868-b7a42b10086c?q=80&w=600&auto=format&fit=crop"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSMYnqn2t7lsLNm_1z4KYKSI7UZe_7zU0ikDwwcPLsDw&s=10"
   }
 ];
 

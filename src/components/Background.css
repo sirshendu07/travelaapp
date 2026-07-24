@@ -1,15 +1,93 @@
+/* --- MAIN WRAPPER --- */
 .background-wrapper {
-  /* Go up one folder to src, then into assets */
-  background-image: url('../assets/ladakh.jpg'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden; /* Keeps floating objects inside the screen */
   display: flex;
   flex-direction: column;
-  
-  /* Optional: Adds a slight dark overlay so your future navbar and text stand out */
-  background-color: rgba(0, 0, 0, 0.4);
-  background-blend-mode: overlay;
+}
+
+/* --- THE STARS --- */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  /* Using radial gradients to draw tiny stars */
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 3s infinite alternate;
+  z-index: 1;
+}
+
+/* --- MOVING OBJECTS (AMBIENT ORBS) --- */
+/* --- MOVING OBJECTS (AMBIENT ORBS) --- */
+.moving-object {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px); /* Increased blur for a softer, more atmospheric glow */
+  opacity: 0.65;
+  z-index: 2;
+  animation: kinematic-drift 25s infinite alternate ease-in-out;
+}
+
+/* Replaced the pink with a beautiful glowing cyan/blue */
+.orb-1 {
+  width: 450px;
+  height: 450px;
+  background: #4facfe; 
+  top: -100px;
+  left: -100px;
+}
+
+/* Rich teal for the bottom right */
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  background: #00f2fe; 
+  bottom: 0%;
+  right: -150px;
+  animation-delay: -5s;
+}
+
+/* Deep indigo/purple for the center ambient light */
+.orb-3 {
+  width: 350px;
+  height: 350px;
+  background: #667eea; 
+  top: 30%;
+  left: 35%;
+  animation-delay: -10s;
+}
+
+/* --- CONTENT LAYER --- */
+.content-layer {
+  position: relative;
+  z-index: 10; /* Ensures your navbar and cards sit above the stars and orbs */
+  width: 100%;
+  height: 100%;
+}
+
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@keyframes kinematic-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(150px, 100px) scale(1.2); }
+  100% { transform: translate(-100px, 200px) scale(0.9); }
 }

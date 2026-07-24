@@ -1,10 +1,22 @@
 /* --- MAIN FOOTER CONTAINER --- */
+/* --- MAIN FOOTER CONTAINER --- */
 .footer-container {
-  background-color: rgba(15, 15, 15, 0.95);
+  /* Cosmic Nebula Gradient with Stardust Texture */
+  background: linear-gradient(135deg, rgba(20, 5, 35, 0.8), rgba(5, 20, 35, 0.85), rgba(30, 0, 20, 0.8)), 
+              url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-size: 300% 300%, auto;
+  animation: rotational-spin 20s ease infinite;
+  
+  /* Glassmorphism Effect */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -10px 40px rgba(0, 255, 255, 0.1);
+  
   color: white;
   width: 100%;
-  padding: 60px 40px 20px 40px;
-  margin-top: 50px;
+  padding: 80px 40px 30px 40px;
+  margin-top: 100px;
   position: relative;
   overflow: hidden;
 }
@@ -121,38 +133,66 @@
 }
 
 /* Gradient Borders for Social Buttons */
+/* Gradient Borders and Glowing Text for Social Buttons */
 .social-btn {
   text-decoration: none;
-  color: white;
+  color: #ffffff; /* Bright white text */
+  font-weight: 900; /* Extra bold */
+  letter-spacing: 1px;
   padding: 12px 25px;
   border: 2px solid transparent;
   border-radius: 30px;
-  /* This creates a gradient border around a dark button */
-  background-image: linear-gradient(rgba(15, 15, 15, 1), rgba(15, 15, 15, 1)), 
-                    linear-gradient(90deg, #00ffff, #ff00ff, #ffff00);
+  
+  /* Creates the gradient border over a dark background */
+  background-image: linear-gradient(rgba(15, 15, 15, 0.95), rgba(15, 15, 15, 0.95)), 
+                    linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+  background-size: 100% 100%, 200% auto;
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  transition: all 0.4s ease;
-  font-weight: bold;
+  
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2); /* Subtle resting glow */
+  animation: borderRotate 4s linear infinite; /* Keeps the border moving */
 }
 
-/* Lifts and fills with color on hover */
+/* Explosive Hover Effect */
 .social-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
-  background-image: linear-gradient(rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.2)), 
-                    linear-gradient(90deg, #00ffff, #ff00ff, #ffff00);
-  text-shadow: 0 0 5px white;
+  transform: translateY(-6px) scale(1.05); /* Pops up and grows slightly */
+  box-shadow: 0 12px 30px rgba(255, 0, 255, 0.6); /* Intense neon shadow */
+  
+  /* Lightens the background slightly so the text pops more */
+  background-image: linear-gradient(rgba(40, 10, 40, 0.8), rgba(10, 40, 40, 0.8)), 
+                    linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+  
+  /* Makes the text itself glow */
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 30px #ff00ff;
 }
 
+/* --- COPYRIGHT BOTTOM --- */
 /* --- COPYRIGHT BOTTOM --- */
 .footer-bottom {
   text-align: center;
   margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #777;
-  font-size: 0.9rem;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+  font-size: 1.1rem;
+  font-weight: 900; /* Makes it very bold */
+  letter-spacing: 2px; /* Spaces out the letters for a premium look */
+  
+  /* Animated Neon Gradient Text */
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbowFlow 3s linear infinite;
+  
+  /* Adds a subtle glowing shadow */
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
 }
 
 /* --- KEYFRAMES --- */

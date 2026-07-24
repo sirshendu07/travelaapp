@@ -3,13 +3,12 @@
   width: 320px;
   position: relative;
   border-radius: 20px;
-  background-color: rgba(20, 20, 20, 0.85); /* Dark frosted background */
-  backdrop-filter: blur(10px);
+  /* Changed to a glassier, slightly blue-tinted dark background */
+  background-color: rgba(10, 12, 20, 0.5); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
-  margin: 40px auto; /* Centers it for testing */
-  
-  /* Smooth transition for the hover movement */
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
@@ -49,11 +48,19 @@
 }
 
 /* --- CARD CONTENT LAYOUT --- */
+/* --- CARD CONTENT LAYOUT (The beautiful text area) --- */
 .card-content {
   padding: 25px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  /* Next-Level Aesthetic: A frosted gradient fading downwards */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.7) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Adds a crisp glass edge below the image */
+  border-bottom-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+  flex-grow: 1; /* Ensures the gradient fills the whole bottom space */
 }
 
 /* --- ANIMATED DESTINATION TITLE --- */

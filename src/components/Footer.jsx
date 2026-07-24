@@ -27,17 +27,25 @@ const Footer = () => {
               Call Us
             </a>
             
-            {/* WhatsApp Link: Opens the WhatsApp chat directly */}
-            <a href="https://wa.me/917439282123" target="_blank" rel="noreferrer" className="social-btn">
+            {/* WhatsApp Link: Opens with pre-filled message */}
+            <a 
+              href="https://wa.me/917439282123?text=Hi%20ANNANYA%20VERSE!%20I%20am%20interested%20in%20your%20travel%20packages%20and%20would%20love%20to%20know%20more%20details." 
+              target="_blank" 
+              rel="noreferrer" 
+              className="social-btn"
+            >
               WhatsApp
             </a>
             
-            {/* Email Link: Opens the default email app */}
-            <a href="mailto:anannyasantra99@gmail.com" className="social-btn">
+            {/* Email Link: Opens with pre-filled subject and body */}
+            <a 
+              href="mailto:anannyasantra99@gmail.com?subject=Travel%20Enquiry%20-%20ANNANYA%20VERSE&body=Hi%20ANNANYA%20VERSE,%0D%0A%0D%0AI%20was%20browsing%20your%20website%20and%20I%20want%20to%20know%20more%20details." 
+              className="social-btn"
+            >
               Gmail
             </a>
 
-            {/* Social Media placeholders */}
+            {/* Social Media placeholders - Ready for your links! */}
             <a href="your_insta_link_here" target="_blank" rel="noreferrer" className="social-btn">
               Instagram
             </a>
